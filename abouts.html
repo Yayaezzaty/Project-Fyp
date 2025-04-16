@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Jenny Ride Care Center</title>
+    <link rel="stylesheet" href="styleA.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <img src="logo5.svg" alt="Jenny Ride Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Homepage</a></li>
+                <li><a href="booking.html">Services</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="about.html">About Us </a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li> 
+                    <a href="#signup.html" id-="userAccount">
+                    <img src="1.png" alt="User Account" width="40">
+                </a></li>
+                <li>
+                    <a href="cart.html">
+                    <img src="2.png" alt="Cart" width="40">
+                    <span id="cartCount">0</span>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Precision & Care for Your Ride</h1>
+            <p>Professional motorcycle services & premium accessories.</p>
+            <a href="booking.html" class="cta-btn">Book an Appointment</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>
+                At **Jenny Ride Care Center**, we believe in **quality service** and **customer satisfaction**. Our expert technicians 
+                provide top-tier **motorcycle repair, servicing, and premium accessories** for all types of riders.
+            </p>
+            <p>Trusted by **hundreds of riders**, we ensure your bike stays in **peak condition**.</p>
+        </div>
+        <div class="about-image">
+            <img src="motorcycle-repair.jpg" alt="Motorcycle Workshop">
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="values">
+        <div class="value-box">
+            <i class="fas fa-tools"></i>
+            <h3>Expert Mechanics</h3>
+            <p>Highly trained professionals who treat your bike with care.</p>
+        </div>
+        <div class="value-box">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Quality Parts</h3>
+            <p>Only the best motorcycle accessories and equipment.</p>
+        </div>
+        <div class="value-box">
+            <i class="fas fa-clock"></i>
+            <h3>Fast & Reliable</h3>
+            <p>Get back on the road with **quick and efficient service**.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <h2 class="footer-title">Jenny Ride Care Center</h2>
+    
+            <div class="footer-content">
+                <!-- Reservations Office -->
+                <div class="footer-box">
+                    <h3>Reservations Office</h3>
+                    <p>🏠 No 1 Jalan Pasar Felda Air Tawar 5.,<br>Kota Tinggi, Johor</p>
+                    <p>📞 010-8446445</p>
+                    <p>📧 JennyWorkshop93@gmail.com</p>
+                </div>
+    
+                <!-- Office Hours -->
+                <div class="footer-box">
+                    <h3>Office Hours</h3>
+                    <p><strong>Monday to Saturday</strong><br>9:00 am to 6:00 pm</p>
+                    <p><strong>Sunday</strong><br>9:00 am to 12:00 noon</p>
+                </div>
+    
+                <!-- Social Media -->
+                <div class="footer-box">
+                    <h3>Get Social</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <button class="social-btn">Tag us in your photos!</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   
+    <!-- GSAP Animation Script -->
+    <script>
+        gsap.from(".hero-content h1", { opacity: 0, y: -50, duration: 1 });
+        gsap.from(".hero-content p", { opacity: 0, y: 20, delay: 0.5, duration: 1 });
+        gsap.from(".cta-btn", { opacity: 0, scale: 0.8, delay: 1, duration: 1 });
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let cartCount = localStorage.getItem("cartCount") || 0;
+        document.getElementById("cartCount").textContent = cartCount;
+
+        let userLoggedIn = false; // Change this based on session status
+        let userAccountLink = document.getElementById("userAccount");
+
+        if (!userLoggedIn) {
+            userAccountLink.href = "signup.html"; // Redirect to sign-up if not logged in
+        } else {
+            userAccountLink.href = "account.html"; // Change this to the user dashboard
+        }
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let isLoggedIn = localStorage.getItem("isLoggedIn");
+        let userAccountLink = document.getElementById("userAccount");
+        let bookNowBtn = document.getElementById("bookNow");
+        let serviceLink = document.getElementById("serviceLink");
+
+        if (!isLoggedIn) {
+            userAccountLink.href = "signup.html"; // Redirect to sign-up page
+            bookNowBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                alert("Please sign up or log in to book a service.");
+                window.location.href = "signup.html";
+            });
+            serviceLink.addEventListener("click", function (e) {
+                e.preventDefault();
+                alert("Please sign up or log in to view services.");
+                window.location.href = "signup.html";
+            });
+        } else {
+            userAccountLink.href = "account.html"; // Redirect to user dashboard
+        }
+    });
+</script>
+
+</body>
+</html>

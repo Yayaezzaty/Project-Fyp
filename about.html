@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Jenny Ride Care</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+    background-color:#1e3a5f;
+    padding: 20px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+    color: #FFF
+    
+}
+.logo {
+    width: 200px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+nav ul li {
+    margin: 0 15px;
+    display: inline;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+}
+nav ul li a:hover {
+color: #ff9800; /* Change text color on hover */
+border-bottom: 3px solid #ff9800; /* Add an underline effect */
+}
+
+        /* Hero Section */
+        .hero {
+            background: url('motorcycle-service.jpg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ff7700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 36px;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Our Values */
+        .values-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .value-box {
+            background: white;
+            padding: 20px;
+            width: 30%;
+            min-width: 280px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .value-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-box i {
+            font-size: 40px;
+            color: #ff7700;
+            margin-bottom: 10px;
+        }
+
+        .value-box h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1e3a5f;
+        }
+
+        /* Meet The Team */
+        .team-section {
+            background: #1e3a5f;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .team-member {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid #ff7700;
+        }
+
+        .team-member h3 {
+            font-size: 22px;
+            color: #1e3a5f;
+        }
+
+        .team-member p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Title Center */
+.footer-title {
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    color:#FF7700;
+    font-style: normal;
+}
+
+/* Flexbox Layout for Boxes */
+.footer-content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px; /* Add spacing */
+    width: 100%;
+}
+
+/* Footer Boxes */
+.footer-box {
+    width: 30%;
+    padding: 20px;
+    border: 1px solid #FF7700;
+    border-radius: 10px;
+    text-align: left;
+    min-width: 280px; /* Prevent boxes from being too small */
+}
+
+/* Social Button */
+.social-btn {
+    background: none;
+    border: 1px solid #FF7700;
+    padding: 10px;
+    color: white;
+    font-style: italic;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+    </style>
+</head>
+
+<header>
+    <img src="logo5.svg" alt="Jenny Ride Logo" class="logo">
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Homepage</a></li>
+            <li><a href="booking.html">Services</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">About Us </a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li> 
+                <a href="#signup.html" id-="userAccount">
+                <img src="1.png" alt="User Account" width="40">
+            </a></li>
+            <li>
+                <a href="cart.html">
+                <img src="2.png" alt="Cart" width="40">
+                <span id="cartCount">0</span>
+            </a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>About Jenny Ride Care</h1>
+            <p>Dedicated to Quality Service & Customer Satisfaction</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <h2>Our Story</h2>
+        <p>Jenny Ride Care was founded with one goal in mind: to provide top-quality motorcycle repair and servicing. With years of experience, we have built a reputation for excellence and reliability.</p>
+
+        <h2>Our Mission</h2>
+        <p>We strive to ensure every customer leaves satisfied, knowing their motorcycle is in the best condition possible. Our team of professionals works tirelessly to offer fast, efficient, and affordable services.</p>
+
+        <!-- Our Values -->
+        <div class="values-container">
+            <div class="value-box">
+                <i>🏍️</i>
+                <h3>Expertise</h3>
+                <p>Our team consists of highly trained professionals dedicated to providing exceptional service.</p>
+            </div>
+            <div class="value-box">
+                <i>🔧</i>
+                <h3>Quality</h3>
+                <p>We use only the best tools and parts to ensure top-notch repairs and servicing.</p>
+            </div>
+            <div class="value-box">
+                <i>😊</i>
+                <h3>Customer Satisfaction</h3>
+                <p>Your satisfaction is our priority. We guarantee reliable and affordable services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team -->
+    <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="team1.jpg" alt="John Doe">
+                <h3>John Doe</h3>
+                <p>Lead Mechanic</p>
+            </div>
+            <div class="team-member">
+                <img src="team2.jpg" alt="Jane Smith">
+                <h3>Jane Smith</h3>
+                <p>Customer Support</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <h2 class="footer-title">Jenny Ride Care Center</h2>
+    
+            <div class="footer-content">
+                <!-- Reservations Office -->
+                <div class="footer-box">
+                    <h3>Reservations Office</h3>
+                    <p>🏠 No 1 Jalan Pasar Felda Air Tawar 5.,<br>Kota Tinggi, Johor</p>
+                    <p>📞 010-8446445</p>
+                    <p>📧 JennyWorkshop93@gmail.com</p>
+                </div>
+    
+                <!-- Office Hours -->
+                <div class="footer-box">
+                    <h3>Office Hours</h3>
+                    <p><strong>Monday to Saturday</strong><br>9:00 am to 6:00 pm</p>
+                    <p><strong>Sunday</strong><br>9:00 am to 12:00 noon</p>
+                </div>
+    
+                <!-- Social Media -->
+                <div class="footer-box">
+                    <h3>Get Social</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <button class="social-btn">Tag us in your photos!</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let cartCount = localStorage.getItem("cartCount") || 0;
+            document.getElementById("cartCount").textContent = cartCount;
+    
+            let userLoggedIn = false; // Change this based on session status
+            let userAccountLink = document.getElementById("userAccount");
+    
+            if (!userLoggedIn) {
+                userAccountLink.href = "signup.html"; // Redirect to sign-up if not logged in
+            } else {
+                userAccountLink.href = "account.html"; // Change this to the user dashboard
+            }
+        });
+    </script>
+     <script>
+        const steps = document.querySelectorAll(".form-step");
+        const indicators = document.querySelectorAll(".step");
+        let currentStep = 0;
+
+        document.querySelectorAll(".next").forEach(button => {
+            button.addEventListener("click", () => {
+                steps[currentStep].classList.remove("active");
+                indicators[currentStep].classList.remove("active");
+                currentStep++;
+                steps[currentStep].classList.add("active");
+                indicators[currentStep].classList.add("active");
+            });
+        });
+
+        document.querySelectorAll(".prev").forEach(button => {
+            button.addEventListener("click", () => {
+                steps[currentStep].classList.remove("active");
+                indicators[currentStep].classList.remove("active");
+                currentStep--;
+                steps[currentStep].classList.add("active");
+                indicators[currentStep].classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+</body>
+</html>

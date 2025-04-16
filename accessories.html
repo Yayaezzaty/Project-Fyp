@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorcycle Repairs | Jenny Ride Care Center</title>
+    <link rel="stylesheet" href="stylesAc.css">
+</head>
+<body>
+
+
+    <!-- Service Details with Video and Information -->
+    <section class="service-details">
+        <div class="service-video">
+            <video controls>
+                <source src="motorcycle-service.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="service-info">
+            <h1>Professional Motorcycle Repairs</h1>
+            <p>We provide high-quality motorcycle repair services using advanced tools and techniques to ensure your bike runs smoothly.</p>
+            <h2>Why Choose Us?</h2>
+            <ul>
+                <li>✅ Expert mechanics with years of experience</li>
+                <li>✅ High-quality spare parts</li>
+                <li>✅ Fast and reliable service</li>
+                <li>✅ Affordable pricing</li>
+                <li>✅ Customer satisfaction guarantee</li>
+            </ul>
+            <a href="booking.php" class="btn">Book an Appointment</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <h2 class="footer-title">Jenny Ride Care Center</h2>
+    
+            <div class="footer-content">
+                <!-- Reservations Office -->
+                <div class="footer-box">
+                    <h3>Reservations Office</h3>
+                    <p>🏠 No 1 Jalan Pasar Felda Air Tawar 5.,<br>Kota Tinggi, Johor</p>
+                    <p>📞 010-8446445</p>
+                    <p>📧 JennyWorkshop93@gmail.com</p>
+                </div>
+    
+                <!-- Office Hours -->
+                <div class="footer-box">
+                    <h3>Office Hours</h3>
+                    <p><strong>Monday to Saturday</strong><br>9:00 am to 6:00 pm</p>
+                    <p><strong>Sunday</strong><br>9:00 am to 12:00 noon</p>
+                </div>
+    
+                <!-- Social Media -->
+                <div class="footer-box">
+                    <h3>Get Social</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <button class="social-btn">Tag us in your photos!</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let cartCount = localStorage.getItem("cartCount") || 0;
+            document.getElementById("cartCount").textContent = cartCount;
+    
+            let userLoggedIn = false; // Change this based on session status
+            let userAccountLink = document.getElementById("userAccount");
+    
+            if (!userLoggedIn) {
+                userAccountLink.href = "signup.html"; // Redirect to sign-up if not logged in
+            } else {
+                userAccountLink.href = "account.html"; // Change this to the user dashboard
+            }
+        });
+    </script>
+
+</body>
+</html>
