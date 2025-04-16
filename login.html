@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Jenny Ride Care</title>
+    <link rel="stylesheet" href="stylesL.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="background">
+        <main class="login-container">
+            <div class="form-box">
+                <h1>Login</h1> <!-- Changed to h1 for better SEO -->
+                
+                <form id="loginForm" action="login.php" method="POST">
+                    <!-- CSRF token would be added by PHP in a real implementation -->
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" required 
+                               autocomplete="username" aria-describedby="email-help">
+                        <label for="email">Email Address</label>
+                        <span class="error-message" id="login-email-error"></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="password" id="password" name="password" required
+                               autocomplete="current-password">
+                        <label for="password">Password</label>
+                        <i class="fa-solid fa-eye toggle-password" 
+                           onclick="togglePassword('password', this)"
+                           aria-label="Toggle password visibility"></i>
+                        <span class="error-message" id="login-password-error"></span>
+                    </div>
+
+                    <button type="submit" id="submitBtn">
+                        <span class="button-text">Login</span>
+                        <span class="loading-spinner hidden"></span>
+                    </button>
+                    
+                    <div class="form-footer">
+                        <p><a href="forgot-password.html">Forgot Password?</a></p>
+                        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="scriptP.js"></script>
+</body>
+</html>

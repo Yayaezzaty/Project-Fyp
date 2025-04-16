@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenny Ride Care Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            background-color:#FFF;
+            color:black;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color:#1e3a5f;
+            padding: 20px;
+            text-align: center;
+            font-family: monospace;
+            font-size: 20px;
+            color: #FFF
+            
+        }
+        .logo {
+            width: 200px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav ul li {
+            margin: 0 15px;
+            display: inline;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+    color: #ff9800; /* Change text color on hover */
+    border-bottom: 3px solid #ff9800; /* Add an underline effect */
+}
+.hero {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+         }
+         #hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fills the section */
+    z-index: -1; /* Pushes video behind content */
+}
+
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            color:white;
+            padding: 40px;
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Typography for Heading */
+        .hero h1 {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+.hero h2 {
+    font-size: 80px;
+    font-weight: bold;
+    color: #ff7700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Animated Button */
+.btn-book {
+    display: inline-block;
+    background: linear-gradient(45deg, #FF5733, #FF8C00);
+    padding: 12px 24px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+    animation: bounce 2s infinite alternate;
+}
+.btn-book:hover {
+    background: linear-gradient(45deg, #FF8C00, #FF5733);
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+/* Applying Animations */
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 1.5s ease-in-out;
+}
+
+        .book-now-btn {
+            background: linear-gradient(45deg, #FF5733, #FF8C00);
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .book-now-btn:hover {
+            background: linear-gradient(45deg, #FF8C00, #FF5733);
+            transform: scale(1.1);
+        }
+      
+        .btn {
+            background-color: #FF6600;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+        }
+        .btn:hover {
+            background-color: #e68900;
+            transform: scale(1.1);
+        }
+        .services, .contact {
+            text-align: center;
+            padding: 50px 20px;
+        }
+    
+ .services {
+    padding: 40px 0;
+    background-color:white;
+    text-align: center;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;  /* Ensures all boxes have equal height */
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.service-box {
+    background-color: #FFF;
+    border: 1px solid #1e3a5f; /* Border color */
+    padding: 20px;
+    width: 30%; /* Ensures three boxes fit in a row */
+    text-align: center;
+}
+
+.service-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+
+.contact-section {
+    background: url('your-background-image.jpg') no-repeat center center/cover;
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.contact-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.contact-info {
+    margin: 20px 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.contact-item i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #FFA500;
+}
+
+.btn-book {
+    display: inline-block;
+    background: linear-gradient(45deg, #FF5733, #FF8C00);
+    padding: 12px 24px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn-book:hover {
+    background: linear-gradient(45deg, #FF8C00, #FF5733);
+    transform: scale(1.05);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #1e3a5f; /* Dark Brown */
+    color:white;
+    padding: 40px 20px;
+    text-align: center;
+   
+}
+
+/* Center Content */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items */
+}
+
+/* Title Center */
+.footer-title {
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    color:#FF7700;
+    font-style: normal;
+}
+
+/* Flexbox Layout for Boxes */
+.footer-content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px; /* Add spacing */
+    width: 100%;
+}
+
+/* Footer Boxes */
+.footer-box {
+    width: 30%;
+    padding: 20px;
+    border: 1px solid #FF7700;
+    border-radius: 10px;
+    text-align: left;
+    min-width: 280px; /* Prevent boxes from being too small */
+}
+
+/* Social Button */
+.social-btn {
+    background: none;
+    border: 1px solid #FF7700;
+    padding: 10px;
+    color: white;
+    font-style: italic;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.social-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#cartCount {
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: relative;
+    top: -10px;
+    left: -5px;
+}
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease-in-out;
+}
+
+.service-box:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.service-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo5.svg" alt="Jenny Ride Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Homepage</a></li>
+                <li><a href="booking.html">Services</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="abouts.html">About Us </a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li> 
+                    <a href="#signup.html" id-="userAccount">
+                    <img src="1.png" alt="User Account" width="40">
+                </a></li>
+                <li>
+                    <a href="cart.html">
+                    <img src="2.png" alt="Cart" width="40">
+                    <span id="cartCount">0</span>
+                </a></li>
+
+            </ul>
+        </nav>
+    </header>
+    
+  
+<section class="hero">
+    <div class="hero">
+        <video autoplay muted loop id="hero-video">
+            <source src="vid1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    <div class="hero-overlay">
+        <h1><span class="fade-in">WELCOME TO</span></h1>
+        <h2 class="slide-in">JENNY RIDE CARE CENTER</h2>
+        <p class="fade-in">Services & Repairs</p>
+        <a href="booking.html" class="btn-book">Book Now</a>
+    </div>
+</section>
+
+    
+<section class="services">
+    <div class="service-container">
+        <a href="motorcycle.html" class="service-box">
+            <img src="r4.jpg" alt="Motorcycle Repairs">
+            <h3>Motorcycle Repairs</h3>
+            <p>Click to learn more about our repair services.</p>
+        </a>
+
+        <a href="oil.html" class="service-box">
+            <img src="r5.jpg" alt="Oil Change">
+            <h3>Oil Change</h3>
+            <p>Click to learn more about our oil change services.</p>
+        </a>
+
+        <a href="accessoriesc.html" class="service-box">
+            <img src="r3.jpg" alt="Accessories & Equipment">
+            <h3>Accessories & Equipment</h3>
+            <p>Click to explore our accessories and equipment.</p>
+        </a>
+    </div>
+       
+    </div>
+</section>
+
+    
+    
+    <footer class="footer">
+        <div class="container">
+            <h2 class="footer-title">Jenny Ride Care Center</h2>
+    
+            <div class="footer-content">
+                <!-- Reservations Office -->
+                <div class="footer-box">
+                    <h3>Reservations Office</h3>
+                    <p>🏠 No 1 Jalan Pasar Felda Air Tawar 5.,<br>Kota Tinggi, Johor</p>
+                    <p>📞 010-8446445</p>
+                    <p>📧 JennyWorkshop93@gmail.com</p>
+                </div>
+    
+                <!-- Office Hours -->
+                <div class="footer-box">
+                    <h3>Office Hours</h3>
+                    <p><strong>Monday to Saturday</strong><br>9:00 am to 6:00 pm</p>
+                    <p><strong>Sunday</strong><br>9:00 am to 12:00 noon</p>
+                </div>
+    
+                <!-- Social Media -->
+                <div class="footer-box">
+                    <h3>Get Social</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <button class="social-btn">Tag us in your photos!</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let cartCount = localStorage.getItem("cartCount") || 0;
+            document.getElementById("cartCount").textContent = cartCount;
+    
+            let userLoggedIn = false; // Change this based on session status
+            let userAccountLink = document.getElementById("userAccount");
+    
+            if (!userLoggedIn) {
+                userAccountLink.href = "signup.html"; // Redirect to sign-up if not logged in
+            } else {
+                userAccountLink.href = "account.html"; // Change this to the user dashboard
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let isLoggedIn = localStorage.getItem("isLoggedIn");
+            let userAccountLink = document.getElementById("userAccount");
+            let bookNowBtn = document.getElementById("bookNow");
+            let serviceLink = document.getElementById("serviceLink");
+    
+            if (!isLoggedIn) {
+                userAccountLink.href = "signup.html"; // Redirect to sign-up page
+                bookNowBtn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    alert("Please sign up or log in to book a service.");
+                    window.location.href = "signup.html";
+                });
+                serviceLink.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    alert("Please sign up or log in to view services.");
+                    window.location.href = "signup.html";
+                });
+            } else {
+                userAccountLink.href = "account.html"; // Redirect to user dashboard
+            }
+        });
+    </script>
+
+    <!-- homepage.html -->
+<h1>Welcome, <span id="userDisplay"></span>!</h1>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let username = localStorage.getItem("username");
+    if (username) {
+        document.getElementById("userDisplay").textContent = username;
+    } else {
+        document.getElementById("userDisplay").textContent = "Guest";
+    }
+});
+</script>
+    
+    
+</body>
+</html>                                                                                                                                                               

@@ -1,0 +1,123 @@
+/* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f5f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.edit-container {
+    width: 50%;
+    background: #fffaf5;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #d4af37;
+}
+
+/* Heading */
+h1 {
+    color: #6b4f31;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Form Styling */
+.edit-product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #6b4f31;
+    width: 30%;
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 65%;
+    padding: 12px;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+    background: #fffaf0;
+    color: #6b4f31;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #b28b30;
+    outline: none;
+}
+
+/* Image Preview */
+.image-preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    margin: 15px auto;
+    display: block;
+    object-fit: cover;
+    border: 2px solid #d4af37;
+}
+
+/* Buttons */
+.update-btn, .cancel-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    border: none;
+}
+
+.update-btn {
+    background: linear-gradient(to right, #d4af37, #b28b30);
+    color: white;
+}
+
+.update-btn:hover {
+    background: linear-gradient(to right, #b28b30, #8f6b23);
+}
+
+.cancel-btn {
+    background: #6b4f31;
+    color: white;
+    margin-top: 10px;
+}
+
+.cancel-btn:hover {
+    background: #5a3d24;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .edit-container {
+        width: 90%;
+    }
+}
