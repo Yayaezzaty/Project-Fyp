@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account - Jenny Ride Care Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #e67e22;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+        .user-info img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #e67e22;
+            cursor: pointer;
+        }
+        .user-info div {
+            margin-left: 20px;
+        }
+        .loyalty, .order-history, .service-history {
+            margin-top: 20px;
+        }
+        .progress-bar {
+            width: 100%;
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress-bar div {
+            width: 70%;
+            height: 10px;
+            background: #e67e22;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #e67e22;
+            color: white;
+        }
+        .settings {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .settings button {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        .settings button:hover {
+            background: #ff9800;
+        }
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            transition: 0.3s ease-in-out;
+        }
+        .modal input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .modal button {
+            margin-top: 10px;
+        }
+        .modal .close {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>My Account</h2>
+        <div class="user-info">
+            <input type="file" id="uploadProfile" style="display: none;" accept="image/*">
+            <img id="profilePic" src="profile.jpg" alt="User Profile" onclick="document.getElementById('uploadProfile').click();">
+            <div>
+                <h3 id="userName">John Doe</h3>
+                <p>Email: <span id="userEmail">johndoe@example.com</span></p>
+                <p>Phone: <span id="userPhone">+60123456789</span></p>
+                <p>Address: <span id="userAddress">123, Street Name, City</span></p>
+            </div>
+        </div>
+
+        <div class="loyalty">
+            <h3>Loyalty Points: 70/100</h3>
+            <div class="progress-bar">
+                <div></div>
+            </div>
+        </div>
+
+        <div class="order-history">
+            <h3>Order History</h3>
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Product</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>#00123</td>
+                    <td>Motorcycle Helmet</td>
+                    <td>Feb 10, 2025</td>
+                    <td>Delivered</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="service-history">
+            <h3>Motorcycle Service History</h3>
+            <table>
+                <tr>
+                    <th>Service ID</th>
+                    <th>Service Type</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>#S001</td>
+                    <td>Oil Change</td>
+                    <td>Jan 20, 2025</td>
+                    <td>Completed</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="settings">
+            <button onclick="openModal('editModal')">Edit Profile</button>
+            <button onclick="openModal('passwordModal')">Change Password</button>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="editModal" class="modal">
+        <h3>Edit Profile</h3>
+        <input type="text" id="newName" placeholder="Enter New Name">
+        <input type="text" id="newPhone" placeholder="Enter New Phone">
+        <input type="text" id="newAddress" placeholder="Enter New Address">
+        <button onclick="saveProfile()">Save</button>
+        <button class="close" onclick="closeModal('editModal')">Cancel</button>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="passwordModal" class="modal">
+        <h3>Change Password</h3>
+        <input type="password" id="oldPassword" placeholder="Old Password">
+        <input type="password" id="newPassword" placeholder="New Password">
+        <button>Update Password</button>
+        <button class="close" onclick="closeModal('passwordModal')">Cancel</button>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+        function saveProfile() {
+            let newName = document.getElementById("newName").value.trim();
+            let newPhone = document.getElementById("newPhone").value.trim();
+            let newAddress = document.getElementById("newAddress").value.trim();
+
+            if (newName) document.getElementById("userName").innerText = newName;
+            if (newPhone) document.getElementById("userPhone").innerText = newPhone;
+            if (newAddress) document.getElementById("userAddress").innerText = newAddress;
+
+            closeModal('editModal');
+        }
+        document.getElementById("uploadProfile").addEventListener("change", function(event) {
+            let reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById("profilePic").src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        });
+    </script>
+</body>
+</html>
